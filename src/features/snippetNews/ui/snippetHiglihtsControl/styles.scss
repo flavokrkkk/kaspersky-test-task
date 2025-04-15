@@ -1,0 +1,32 @@
+.news-description {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d1d1d1;
+
+  .highlight {
+    background-color: #2f2dd3;
+    border-radius: 5px;
+    padding: 3px;
+  }
+}
+.show-more-link {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  cursor: pointer;
+  color: rgb(50, 97, 226);
+}
+
+.anticon-down {
+  margin-top: 5px;
+  padding: 0;
+  line-height: 1;
+}
+
+.anticon-up {
+  margin-top: 5px;
+  padding: 0;
+  line-height: 1;
+}

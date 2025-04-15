@@ -1,5 +1,10 @@
+import { useFetchSnippetNews } from "@/features/snippetNews/hooks/useFetchSnippetNews";
+import { SnippetNewsView } from "@/features/snippetNews/ui/snippetNewsView/snippetNewsView";
+
 const NewsPage = () => {
-  return <div>NewsPage</div>;
+  useFetchSnippetNews();
+
+  return <SnippetNewsView />;
 };
 
 export default NewsPage;
