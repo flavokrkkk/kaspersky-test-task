@@ -1,6 +1,5 @@
 import { Typography } from "antd";
 import { FC, RefObject, useRef, useState } from "react";
-import "./styles.scss";
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
 import { useResize } from "@/shared/hooks/useResize";
 
@@ -19,7 +18,7 @@ export const SnippetHiglihtsControl: FC<ISnippetHiglihtsControl> = ({
 
   const handleCheckSizeTextContent = () => {
     if (textRef.current) {
-      const needsExpand = textRef.current.scrollHeight > 130;
+      const needsExpand = textRef.current.scrollHeight > 125;
       setNeedsExpand(needsExpand);
     }
   };
@@ -36,7 +35,7 @@ export const SnippetHiglihtsControl: FC<ISnippetHiglihtsControl> = ({
         className="news-description"
         ref={textRef}
         style={{
-          maxHeight: isExpanded ? "none" : "130px",
+          maxHeight: isExpanded ? "none" : "126px",
           overflow: "hidden",
         }}
       >

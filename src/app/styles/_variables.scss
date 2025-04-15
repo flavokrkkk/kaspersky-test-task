@@ -1,0 +1,41 @@
+$colors: (
+  primary-blue: #1890ff,
+  primary-blue-hover: #40a9ff,
+  light-blue: #40c4ff,
+  light-blue-hover: #69d4ff,
+  secondary-gray: #a1a1a1,
+  dark-gray: #424244,
+  border-gray: #5f5f5f,
+  dark-bg: #1e1e1e,
+  darker-bg: #2d2d2d,
+  text-white: #ffffff,
+  text-gray: #d1d1d1,
+  border-blue: #0e5abd,
+  highlight-blue: rgb(50, 97, 226),
+  gray: gray,
+);
+
+$spacings: (
+  xsmall: 4px,
+  small: 6px,
+  medium: 8px,
+  large: 12px,
+  xlarge: 15px,
+  xxlarge: 16px,
+);
+
+$font-sizes: (
+  xsmall: 10px,
+  small: 11px,
+  medium: 12px,
+  large: 14px,
+  xlarge: 15px,
+);
+
+$border-radii: (
+  small: 2px,
+  medium: 4px,
+  large: 6px,
+  xlarge: 10px,
+  tag: 15px,
+);

@@ -1,0 +1,370 @@
+@import "../../../app/styles/variables";
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin source-info-styles {
+  @include flex-center;
+  margin: map-get($spacings, medium) 0;
+  font-size: map-get($font-sizes, medium);
+  line-height: 1.5;
+  color: map-get($colors, secondary-gray);
+
+  .ant-space {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: map-get($spacings, xsmall);
+  }
+
+  .source-link {
+    color: map-get($colors, primary-blue);
+    text-decoration: underline;
+    &:hover {
+      color: map-get($colors, primary-blue-hover);
+    }
+  }
+
+  .flag {
+    border-radius: map-get($border-radii, small);
+    object-fit: cover;
+  }
+
+  .country-text,
+  .language-text,
+  .author-text {
+    font-size: map-get($font-sizes, medium);
+    color: map-get($colors, secondary-gray);
+  }
+
+  .anticon {
+    margin-right: map-get($spacings, xsmall);
+    color: map-get($colors, secondary-gray);
+  }
+
+  .author-text {
+    @include flex-center;
+  }
+}
+
+@mixin duplicate-card-styles {
+  padding: map-get($spacings, large);
+  margin-top: map-get($spacings, medium);
+  border: 1px solid map-get($colors, border-blue);
+  border-radius: map-get($border-radii, large);
+
+  .duplicate-header {
+    margin-bottom: map-get($spacings, medium);
+    .ant-space {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: map-get($spacings, xsmall);
+    }
+  }
+
+  .duplicate-secondary-text {
+    font-size: map-get($font-sizes, small);
+    color: map-get($colors, secondary-gray);
+  }
+}
+
+.news-container {
+  padding: map-get($spacings, xxlarge);
+}
+
+.alert-margin {
+  margin: map-get($spacings, xxlarge);
+  background-color: map-get($colors, darker-bg);
+  color: map-get($colors, text-white);
+}
+
+.snippet-news-container {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  height: 100vh;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.ant-card-bordered {
+  border: 1px solid map-get($colors, border-gray);
+}
+
+.original-source-button {
+  margin-top: map-get($spacings, xlarge);
+  background-color: map-get($colors, dark-gray);
+  border: none;
+  color: map-get($colors, primary-blue);
+  border-radius: map-get($border-radii, xlarge);
+  padding: map-get($spacings, xsmall) 15px;
+  font-size: map-get($font-sizes, large);
+  line-height: 22px;
+  height: 32px;
+  @include flex-center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.news-card {
+  margin-bottom: map-get($spacings, xxlarge);
+  border-radius: map-get($border-radii, large);
+  background-color: transparent;
+  color: map-get($colors, text-white);
+  box-shadow: none;
+}
+
+.news-title {
+  @include flex-center;
+  margin-top: map-get($spacings, xsmall);
+
+  .flag {
+    margin-right: map-get($spacings, small);
+    width: map-get($spacings, small);
+    height: map-get($spacings, small);
+  }
+
+  .title-link {
+    font-size: map-get($font-sizes, xlarge);
+    font-weight: 600;
+    color: map-get($colors, light-blue);
+    line-height: 1.4;
+    &:hover {
+      color: map-get($colors, light-blue-hover);
+    }
+  }
+}
+
+.source-info {
+  @include source-info-styles;
+}
+
+.news-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: map-get($spacings, xlarge);
+  gap: map-get($spacings, small);
+
+  .tag {
+    font-size: map-get($font-sizes, xsmall);
+    padding: 3px 10px;
+    border-radius: map-get($border-radii, tag);
+    color: map-get($colors, secondary-gray);
+    border: 1px solid map-get($colors, border-gray);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .tag-separator {
+    display: none;
+  }
+
+  .show-all-link {
+    font-size: map-get($font-sizes, small);
+    color: map-get($colors, primary-blue);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &:hover {
+      color: map-get($colors, primary-blue-hover);
+      text-decoration: underline;
+    }
+  }
+}
+
+.news-footer {
+  margin-top: map-get($spacings, xxlarge);
+
+  .original-source {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: map-get($spacings, xsmall);
+    margin-bottom: map-get($spacings, medium);
+
+    .source-icon {
+      font-size: map-get($font-sizes, medium);
+      color: map-get($colors, secondary-gray);
+    }
+
+    .duplicates-text {
+      font-size: map-get($font-sizes, small);
+      color: map-get($colors, secondary-gray);
+    }
+
+    p {
+      color: map-get($colors, gray);
+    }
+  }
+
+  .duplicate-card {
+    @include duplicate-card-styles;
+
+    .duplicate-title {
+      margin-bottom: map-get($spacings, medium);
+      &-link {
+        font-size: map-get($font-sizes, large);
+        font-weight: 500;
+        color: map-get($colors, light-blue);
+        line-height: 1.4;
+
+        &:hover {
+          color: map-get($colors, light-blue-hover);
+        }
+      }
+    }
+
+    .duplicate-title-link {
+      color: #1677ff;
+      font-weight: 400;
+      font-size: 16px;
+      &:hover {
+        color: map-get($colors, light-blue-hover);
+      }
+    }
+
+    .duplicate-source-info {
+      @include source-info-styles;
+
+      &-link {
+        font-size: map-get($font-sizes, small);
+        color: map-get($colors, primary-blue);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          color: map-get($colors, primary-blue-hover);
+        }
+      }
+
+      .duplicate-flag {
+        border-radius: map-get($border-radii, small);
+        object-fit: cover;
+      }
+
+      .duplicate-country-text,
+      .duplicate-language-text,
+      .duplicate-author-text {
+        font-size: map-get($font-sizes, small);
+        color: map-get($colors, secondary-gray);
+      }
+    }
+  }
+
+  .view-duplicates-button {
+    margin-top: map-get($spacings, xxlarge);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: map-get($spacings, medium);
+    font-size: map-get($font-sizes, medium);
+    color: map-get($colors, text-white);
+    border: 1px solid map-get($colors, gray);
+    border-radius: map-get($border-radii, large);
+    padding: map-get($spacings, xsmall) map-get($spacings, large);
+    height: 38px;
+    width: 100%;
+
+    &:hover {
+      color: map-get($colors, primary-blue-hover);
+      background-color: map-get($colors, dark-gray);
+      border-color: map-get($colors, dark-gray);
+    }
+
+    .view-duplicates-icon {
+      font-size: map-get($font-sizes, xsmall);
+      order: -1;
+      padding-bottom: map-get($spacings, xsmall);
+    }
+  }
+}
+
+.secondary-text {
+  font-size: map-get($font-sizes, small);
+  color: map-get($colors, secondary-gray);
+  display: flex;
+  gap: 5px;
+
+  .traffic-section {
+    display: flex;
+    gap: 10px;
+  }
+
+  .traffic-item {
+    display: flex;
+    gap: map-get($spacings, xsmall);
+  }
+
+  .traffic-percent {
+    color: map-get($colors, text-white);
+  }
+}
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .news-info {
+    @include flex-center;
+    gap: map-get($spacings, medium);
+
+    .secondary-text {
+      font-size: map-get($font-sizes, small);
+      color: map-get($colors, secondary-gray);
+    }
+
+    .white-text {
+      color: map-get($colors, text-white) !important;
+    }
+
+    .gray-text {
+      color: map-get($colors, gray) !important;
+    }
+  }
+
+  .sentiment-tag {
+    font-size: map-get($font-sizes, small);
+    padding: 0 map-get($spacings, small);
+    color: map-get($colors, text-white);
+    border-radius: map-get($border-radii, medium);
+  }
+}
+
+.news-description {
+  display: block;
+  font-size: map-get($font-sizes, large);
+  line-height: 1.5;
+  color: map-get($colors, text-gray);
+
+  .highlight {
+    background-color: map-get($colors, highlight-blue);
+    border-radius: 5px;
+    padding: 1px 2px;
+  }
+}
+
+.show-more-link {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  font-size: map-get($font-sizes, medium);
+  cursor: pointer;
+  color: map-get($colors, highlight-blue);
+}
+
+.anticon-down,
+.anticon-up {
+  margin-top: 5px;
+  padding: 0;
+  line-height: 1;
+}
