@@ -7,20 +7,18 @@ const { Text } = Typography;
 interface ISnippetHiglihtsControl {
   traffics: Array<IData_TagItem>;
 }
-const SnippetTopTraficControl: FC<ISnippetHiglihtsControl> = ({ traffics }) => {
-  return (
-    <Text className="secondary-text">
-      Top Traffic:{" "}
-      <section className="traffic-section">
-        {traffics.map((traffic) => (
-          <div className="traffic-item" key={traffic.value}>
-            <span>{traffic.value}</span>
-            <span className="traffic-percent">{traffic.count}%</span>
-          </div>
-        ))}
-      </section>
-    </Text>
-  );
-};
+const SnippetTopTraficControl: FC<ISnippetHiglihtsControl> = ({ traffics }) => (
+  <Text className="secondary-text">
+    Top Traffic:{" "}
+    <section className="traffic-section">
+      {traffics.map((traffic) => (
+        <div className="traffic-item" key={traffic.value}>
+          <span>{traffic.value}</span>
+          <span className="traffic-percent">{traffic.count}%</span>
+        </div>
+      ))}
+    </section>
+  </Text>
+);
 
 export default SnippetTopTraficControl;
