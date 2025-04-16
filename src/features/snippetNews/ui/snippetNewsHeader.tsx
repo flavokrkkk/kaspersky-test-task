@@ -4,6 +4,7 @@ import { formatReach } from "@/shared/libs/utils/formatReach";
 import { Tag, Typography } from "antd";
 import SnippetTopTraficControl from "./snippetTopTraficControl";
 import { santimentColorCheck } from "@/shared/libs/utils/sentimentColor";
+import { InfoCircleOutlined } from "@ant-design/icons";
 
 interface NewsHeaderProps {
   date: string;
@@ -32,10 +33,15 @@ export const NewsHeader: React.FC<NewsHeaderProps> = ({
       </Text>
       {traffic && <SnippetTopTraficControl traffics={traffic} />}
     </div>
-    {sentiment && (
-      <Tag color={santimentColorCheck(sentiment)} className="sentiment-tag">
-        {sentiment}
-      </Tag>
-    )}
+    <section className="news-card-container">
+      {sentiment && (
+        <Tag color={santimentColorCheck(sentiment)} className="sentiment-tag">
+          {sentiment}
+        </Tag>
+      )}
+      <div className="info-icon-wrapper">
+        <InfoCircleOutlined />
+      </div>
+    </section>
   </div>
 );
