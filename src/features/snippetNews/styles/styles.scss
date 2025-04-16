@@ -348,6 +348,67 @@
     font-size: 20px;
     cursor: pointer;
   }
+
+  .news-card-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .info-icon-wrapper {
+    margin-top: 3px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .traffic-chart-container {
+    padding: 15px;
+    background-color: #1a1a2e;
+    background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(30, 40, 90, 0.5) 0%,
+      transparent 50%
+    );
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .traffic-chart {
+    width: 300px;
+    height: 200px;
+  }
+
+  .traffic-chart-container > div {
+    color: rgba(255, 255, 255, 0.87);
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .highcharts-container {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  }
+
+  .highcharts-background {
+    fill: #1a1a2e !important;
+  }
+
+  .highcharts-title {
+    fill: rgba(255, 255, 255, 0.87) !important;
+    font-size: 14px !important;
+  }
+
+  .highcharts-data-label {
+    fill: rgba(255, 255, 255, 0.87) !important;
+    color: rgba(255, 255, 255, 0.87) !important;
+  }
+
+  .highcharts-data-label text {
+    fill: rgba(255, 255, 255, 0.87) !important;
+    color: rgba(255, 255, 255, 0.87) !important;
+    font-size: 12px !important;
+  }
 }
 
 .news-description {
