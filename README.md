@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+## Обзор
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Цель задания — создать React-компонент для отображения блока новостей на основе предоставленного макета дизайна. Компонент отображает данные новости, включая заголовок, содержимое, сантимент, охват, дату и распределение трафика, максимально приближённо к исходному дизайну.
 
-Currently, two official plugins are available:
+### Функциональность
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Отображение блока новости с полями: заголовок, содержимое, сантимент, охват, дата и данные о трафике.
+- Интерактивная диаграмма трафика с использованием Highcharts, отображаемая в выпадающем меню.
+- Управление состоянием с помощью Redux Toolkit для работы с данными новости.
+- Стилизация с использованием Ant Design и SCSS для современного и адаптивного дизайна.
+- Тестовый датасет хранится в JSON-файле и загружается через запрос.
 
-## Expanding the ESLint configuration
+## Технологический стек
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **JavaScript/TypeScript**: Основной язык разработки.
+- **React**: Библиотека для создания пользовательского интерфейса.
+- **Ant Design**: Библиотека UI-компонентов (Dropdown, Tag, Text и др.).
+- **SCSS**: Для кастомной стилизации, соответствующей макету.
+- **Redux Toolkit**: Для управления состоянием приложения.
+- **Highcharts**: Для отображения интерактивной диаграммы распределения трафика.
+- **pnpm**: Пакетный менеджер для управления зависимостями.
+- **JSON**: Тестовый датасет хранится в JSON-файле.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Требования
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Node.js** (версия 16 или выше)
+- **pnpm** (версия 7 или выше)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Установка
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Склонируйте репозиторий:
+
+   ```
+   git clone https://github.com/flavokrkkk/kaspersky-test-task.git
+   cd kaspersky-test-task
+   ```
+
+2. Установите зависимости с помощью pnpm:
+
+   ```
+   pnpm install
+   ```
+
+## Запуск проекта
+
+1. Запустите сервер разработки:
+
+   ```
+   pnpm run dev
+   ```
+
+2. Откройте браузер и перейдите по адресу:
+
+   ```
+   http://localhost:5173
+   ```
